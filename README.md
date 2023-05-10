@@ -62,6 +62,18 @@ To connect to this deployment in a browser. Navigate to [localhost:54321](http:/
 kubectl port-forward service/simple-k8s 54321:80 
 ```
 
+### Namespace Reader
+
+In order to access ConfigMap and Secrets, you'll need to have role that has read permissions inside the cluster.
+
+For development clusters the below instructions will work, but this is **NOT** something you should apply to a production cluster. To learn more read about [Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+
+A simple [namespace-reader.yaml](./k8s/namespace-reader.yaml) is provided that you can apply to a cluster with the following command.
+
+```shell
+kubectl apply -f k8s/namespace-reader.yaml
+```
+
 ### ConfigMap
 
 Used as an example of how values from the Config Map can override default values.
