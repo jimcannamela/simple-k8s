@@ -4,6 +4,7 @@ metadata:
   name: simple-k8s
 spec:
   selector:
+    type: LoadBalancer
     app: simple-k8s
   ports:
     - protocol: TCP
